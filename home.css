@@ -1,0 +1,451 @@
+/* ==================== HOME PAGE SPECIFIC STYLES ==================== */
+
+/* Hero Section Enhancements */
+.hero {
+    background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="dark"] .hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.hero-gradient {
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
+}
+
+/* Floating elements in hero */
+.floating-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    animation: float 6s ease-in-out infinite;
+}
+
+[data-theme="dark"] .floating-card {
+    background: rgba(30, 41, 59, 0.8);
+}
+
+.floating-card.fc-1 {
+    top: 10%;
+    right: 5%;
+    animation-delay: 0s;
+}
+
+.floating-card.fc-2 {
+    top: 50%;
+    right: 8%;
+    animation-delay: 1s;
+}
+
+.floating-card.fc-3 {
+    bottom: 10%;
+    right: 3%;
+    animation-delay: 2s;
+}
+
+.fc-icon {
+    font-size: 1.75rem;
+}
+
+.fc-title {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+}
+
+.fc-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* Vehicle grid animations */
+.vehicle-card {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.vehicle-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    opacity: 0;
+    animation: shine 3s ease-in-out;
+}
+
+@keyframes shine {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(50%, 50%);
+    }
+}
+
+.vehicle-card:hover::before {
+    animation: shine 0.6s ease-in-out;
+}
+
+/* Owner CTA Enhancements */
+.owner-cta-card {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 4rem;
+    border-radius: var(--radius-xl);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.owner-cta-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+}
+
+.owner-cta-content {
+    position: relative;
+    z-index: 2;
+}
+
+.owner-cta-visual {
+    position: relative;
+    height: 300px;
+}
+
+.owner-stats {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.owner-stat {
+    flex: 1;
+    min-width: 120px;
+}
+
+.owner-stat-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.owner-stat-label {
+    display: block;
+    font-size: 0.75rem;
+    opacity: 0.9;
+}
+
+/* Testimonial cards */
+.testimonial-card {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--gray-200);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+[data-theme="dark"] .testimonial-card {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary);
+}
+
+.testimonial-stars {
+    font-size: 0.875rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author-avatar {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.author-name {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.author-city {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+/* Cities grid */
+.cities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.city-card {
+    padding: 1.5rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+}
+
+[data-theme="dark"] .city-card {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.city-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary);
+}
+
+.city-emoji {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.city-card h4 {
+    margin-bottom: 0.5rem;
+}
+
+.city-card span {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+/* App CTA */
+.app-cta {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(245, 158, 11, 0.05));
+}
+
+.app-cta-inner {
+    text-align: center;
+    padding: 2rem;
+}
+
+.app-cta-content h2 {
+    margin-bottom: 0.75rem;
+}
+
+.app-cta-content p {
+    margin-bottom: 2rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.app-cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Bottom navigation */
+.bottom-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid var(--gray-200);
+    padding: 1rem;
+    z-index: 999;
+}
+
+[data-theme="dark"] .bottom-nav {
+    background: var(--bg-secondary);
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.bottom-nav-item.active {
+    color: var(--primary);
+}
+
+.bottom-nav-item:hover {
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        gap: 0;
+        z-index: 999;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    [data-theme="dark"] .nav-links {
+        background: var(--bg-secondary);
+    }
+
+    .nav-link {
+        padding: 1rem;
+        border-bottom: 1px solid var(--gray-200);
+    }
+
+    [data-theme="dark"] .nav-link {
+        border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .owner-cta-card {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .vehicles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bottom-nav {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    body {
+        padding-bottom: 80px;
+    }
+
+    .hero {
+        padding: 5rem 0 2rem;
+    }
+
+    .section {
+        padding: 2rem 0;
+    }
+}
+
+/* 3D Section */
+.canvas-container {
+    width: 100%;
+    height: 600px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .canvas-container {
+        height: 400px;
+    }
+}
+
+/* Smooth transitions */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Loading state */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.skeleton {
+    background: linear-gradient(90deg, var(--gray-200) 25%, var(--gray-100) 50%, var(--gray-200) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--gray-100);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
