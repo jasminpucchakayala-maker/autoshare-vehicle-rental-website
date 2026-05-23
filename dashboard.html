@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage your bookings, vehicles, and profile on AutoShare.">
+    <title>Dashboard — AutoShare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container navbar-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="var(--primary)"/><path d="M8 20C8 20 10 14 16 14C22 14 24 20 24 20" stroke="white" stroke-width="2" stroke-linecap="round"/><circle cx="11" cy="21" r="2.5" fill="white"/><circle cx="21" cy="21" r="2.5" fill="white"/></svg></div>
+                <span class="logo-text">Auto<span class="logo-accent">Share</span></span>
+            </a>
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="search.html" class="nav-link">Search Vehicles</a>
+                <a href="list-vehicle.html" class="nav-link">List Your Vehicle</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="btn-icon" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                </button>
+                <button class="btn-icon notification-btn" id="notification-btn" aria-label="Notifications">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/></svg>
+                    <span class="notification-badge">2</span>
+                </button>
+                <button class="btn btn-ghost btn-sm" id="logout-btn">Logout</button>
+                <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-page page-transition">
+        <div class="container">
+            <!-- Profile Header -->
+            <div class="dash-header" id="dash-header">
+                <div class="dash-profile">
+                    <div class="avatar avatar-xl" id="user-avatar">DU</div>
+                    <div>
+                        <h1 id="user-name">Welcome back!</h1>
+                        <p id="user-info" class="dash-profile-sub"></p>
+                    </div>
+                </div>
+                <div class="dash-actions">
+                    <a href="search.html" class="btn btn-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                        Find a Vehicle
+                    </a>
+                    <a href="list-vehicle.html" class="btn btn-outline">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+                        List Vehicle
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid" id="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card-icon" style="background: var(--primary-ghost); color: var(--primary);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                    </div>
+                    <div>
+                        <div class="stat-card-value" id="stat-total-bookings">0</div>
+                        <div class="stat-card-label">Total Bookings</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon" style="background: var(--success-light); color: var(--success);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                    </div>
+                    <div>
+                        <div class="stat-card-value" id="stat-active-bookings">0</div>
+                        <div class="stat-card-label">Active Bookings</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon" style="background: var(--warning-light); color: var(--warning);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                    </div>
+                    <div>
+                        <div class="stat-card-value" id="stat-total-spent">₹0</div>
+                        <div class="stat-card-label">Total Spent</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon" style="background: rgba(147, 51, 234, 0.1); color: #9333EA;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div>
+                        <div class="stat-card-value" id="stat-avg-rating">—</div>
+                        <div class="stat-card-label">Avg. Rating Given</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Tabs -->
+            <div class="dash-tabs">
+                <button class="dash-tab active" data-tab="bookings">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                    My Bookings
+                </button>
+                <button class="dash-tab" data-tab="vehicles">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17m-2 0a2 2 0 104 0 2 2 0 10-4 0"/><path d="M17 17m-2 0a2 2 0 104 0 2 2 0 10-4 0"/><path d="M5 17h-2V6a1 1 0 011-1h9v12m-4 0h6"/></svg>
+                    My Vehicles
+                </button>
+                <button class="dash-tab" data-tab="profile">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    Profile & KYC
+                </button>
+            </div>
+
+            <!-- Tab: Bookings -->
+            <div class="tab-content active" id="tab-bookings">
+                <div class="booking-filters">
+                    <button class="booking-filter active" data-filter="all">All</button>
+                    <button class="booking-filter" data-filter="confirmed">Upcoming</button>
+                    <button class="booking-filter" data-filter="active">Active</button>
+                    <button class="booking-filter" data-filter="completed">Completed</button>
+                    <button class="booking-filter" data-filter="cancelled">Cancelled</button>
+                </div>
+                <div class="bookings-list" id="bookings-list">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- Tab: Vehicles -->
+            <div class="tab-content" id="tab-vehicles">
+                <div class="vehicles-header">
+                    <h3>Your Listed Vehicles</h3>
+                    <a href="list-vehicle.html" class="btn btn-primary btn-sm">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+                        Add Vehicle
+                    </a>
+                </div>
+                <div id="user-vehicles-list">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- Tab: Profile -->
+            <div class="tab-content" id="tab-profile">
+                <div class="profile-sections">
+                    <div class="profile-section">
+                        <h3>Personal Information</h3>
+                        <form id="profile-form" class="profile-form">
+                            <div class="profile-form-grid">
+                                <div class="input-group">
+                                    <label for="profile-name">Full Name</label>
+                                    <input type="text" id="profile-name" class="input" placeholder="Your full name">
+                                </div>
+                                <div class="input-group">
+                                    <label for="profile-email">Email</label>
+                                    <input type="email" id="profile-email" class="input" placeholder="your@email.com">
+                                </div>
+                                <div class="input-group">
+                                    <label for="profile-phone">Phone</label>
+                                    <input type="tel" id="profile-phone" class="input" placeholder="+91 XXXXXXXXXX" readonly>
+                                </div>
+                                <div class="input-group">
+                                    <label for="profile-city">City</label>
+                                    <input type="text" id="profile-city" class="input" placeholder="Your city">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="margin-top: var(--space-4);">Save Changes</button>
+                        </form>
+                    </div>
+
+                    <div class="profile-section">
+                        <h3>KYC Verification</h3>
+                        <p class="kyc-desc">Complete your KYC to start renting vehicles. Upload your Aadhaar card and Driving License.</p>
+                        <div class="kyc-cards">
+                            <div class="kyc-card" id="kyc-aadhaar">
+                                <div class="kyc-card-icon">🪪</div>
+                                <div class="kyc-card-info">
+                                    <h4>Aadhaar Card</h4>
+                                    <span class="status status-pending">Pending</span>
+                                </div>
+                                <button class="btn btn-outline btn-sm kyc-upload-btn" data-type="aadhaar">Upload</button>
+                            </div>
+                            <div class="kyc-card" id="kyc-license">
+                                <div class="kyc-card-icon">🪪</div>
+                                <div class="kyc-card-info">
+                                    <h4>Driving License</h4>
+                                    <span class="status status-pending">Pending</span>
+                                </div>
+                                <button class="btn btn-outline btn-sm kyc-upload-btn" data-type="license">Upload</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile Bottom Nav -->
+    <nav class="bottom-nav" id="bottom-nav">
+        <a href="index.html" class="bottom-nav-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg><span>Home</span></a>
+        <a href="search.html" class="bottom-nav-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg><span>Search</span></a>
+        <a href="dashboard.html" class="bottom-nav-item active"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span>Dashboard</span></a>
+        <a href="dashboard.html" class="bottom-nav-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Profile</span></a>
+    </nav>
+
+    <script src="js/app.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

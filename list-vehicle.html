@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="List your vehicle on AutoShare and start earning passive income. Set your own prices, availability, and rules.">
+    <title>List Your Vehicle — AutoShare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/list-vehicle.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container navbar-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="var(--primary)"/><path d="M8 20C8 20 10 14 16 14C22 14 24 20 24 20" stroke="white" stroke-width="2" stroke-linecap="round"/><circle cx="11" cy="21" r="2.5" fill="white"/><circle cx="21" cy="21" r="2.5" fill="white"/></svg></div>
+                <span class="logo-text">Auto<span class="logo-accent">Share</span></span>
+            </a>
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="search.html" class="nav-link">Search Vehicles</a>
+                <a href="list-vehicle.html" class="nav-link active">List Your Vehicle</a>
+                <a href="how-it-works.html" class="nav-link">How It Works</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="btn-icon" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                </button>
+                <a href="auth.html" class="btn btn-primary btn-sm" id="auth-btn">Login</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="list-page page-transition">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="list-hero">
+                <div class="list-hero-content">
+                    <span class="section-tag">Earn Passive Income</span>
+                    <h1>List Your Vehicle on AutoShare</h1>
+                    <p>Turn your idle vehicle into a money-making machine. Set your own prices, availability, and rules. Start earning today.</p>
+                </div>
+                <div class="list-hero-stats">
+                    <div class="lh-stat">
+                        <div class="lh-stat-value">₹15K+</div>
+                        <div class="lh-stat-label">Avg. monthly earnings</div>
+                    </div>
+                    <div class="lh-stat">
+                        <div class="lh-stat-value">500+</div>
+                        <div class="lh-stat-label">Active owners</div>
+                    </div>
+                    <div class="lh-stat">
+                        <div class="lh-stat-value">100%</div>
+                        <div class="lh-stat-label">Insurance covered</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wizard Steps Indicator -->
+            <div class="wizard-steps" id="wizard-steps">
+                <div class="wizard-step active" data-step="1">
+                    <div class="wizard-step-num">1</div>
+                    <span>Vehicle Info</span>
+                </div>
+                <div class="wizard-step-line"></div>
+                <div class="wizard-step" data-step="2">
+                    <div class="wizard-step-num">2</div>
+                    <span>Photos</span>
+                </div>
+                <div class="wizard-step-line"></div>
+                <div class="wizard-step" data-step="3">
+                    <div class="wizard-step-num">3</div>
+                    <span>Pricing</span>
+                </div>
+                <div class="wizard-step-line"></div>
+                <div class="wizard-step" data-step="4">
+                    <div class="wizard-step-num">4</div>
+                    <span>Documents</span>
+                </div>
+                <div class="wizard-step-line"></div>
+                <div class="wizard-step" data-step="5">
+                    <div class="wizard-step-num">5</div>
+                    <span>Location</span>
+                </div>
+            </div>
+
+            <!-- Wizard Form -->
+            <div class="wizard-container">
+                <!-- Step 1: Vehicle Info -->
+                <div class="wizard-panel active" id="step-1">
+                    <div class="wizard-panel-header">
+                        <h2>Vehicle Information</h2>
+                        <p>Tell us about your vehicle. This information helps renters find the right car.</p>
+                    </div>
+                    <div class="wizard-form">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="v-type">Vehicle Type *</label>
+                                <select id="v-type" class="input" required>
+                                    <option value="">Select type</option>
+                                    <option value="car">Car</option>
+                                    <option value="suv">SUV</option>
+                                    <option value="bike">Bike / Scooter</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="v-make">Make / Brand *</label>
+                                <input type="text" id="v-make" class="input" placeholder="e.g., Maruti, Hyundai, Honda" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="v-model">Model *</label>
+                                <input type="text" id="v-model" class="input" placeholder="e.g., Swift Dzire, Creta, Activa" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="v-year">Year *</label>
+                                <select id="v-year" class="input" required>
+                                    <option value="">Select year</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="v-fuel">Fuel Type *</label>
+                                <select id="v-fuel" class="input" required>
+                                    <option value="">Select fuel</option>
+                                    <option value="Petrol">Petrol</option>
+                                    <option value="Diesel">Diesel</option>
+                                    <option value="Electric">Electric</option>
+                                    <option value="CNG">CNG</option>
+                                    <option value="Hybrid">Hybrid</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="v-transmission">Transmission *</label>
+                                <select id="v-transmission" class="input" required>
+                                    <option value="">Select transmission</option>
+                                    <option value="Manual">Manual</option>
+                                    <option value="Automatic">Automatic</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="v-seats">Seats *</label>
+                                <select id="v-seats" class="input" required>
+                                    <option value="">Select seats</option>
+                                    <option value="2">2</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8+</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="v-color">Color</label>
+                                <input type="text" id="v-color" class="input" placeholder="e.g., White, Silver, Black">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="v-plate">License Plate Number *</label>
+                            <input type="text" id="v-plate" class="input" placeholder="e.g., AP 21 AB 1234" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="v-description">Description</label>
+                            <textarea id="v-description" class="input" placeholder="Describe your vehicle — condition, features, any special notes for renters..." rows="3"></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label>Features</label>
+                            <div class="features-checkbox-grid">
+                                <label class="feature-checkbox"><input type="checkbox" value="AC"> <span></span> Air Conditioning</label>
+                                <label class="feature-checkbox"><input type="checkbox" value="Bluetooth"> <span></span> Bluetooth</label>
+                                <label class="feature-checkbox"><input type="checkbox" value="GPS"> <span></span> GPS Navigation</label>
+                                <label class="feature-checkbox"><input type="checkbox" value="USB"> <span></span> USB Charging</label>
+                                <label class="feature-checkbox"><input type="checkbox" value="Camera"> <span></span> Reverse Camera</label>
+                                <label class="feature-checkbox"><input type="checkbox" value="Airbags"> <span></span> Airbags</label>
+                                <label class="feature-checkbox"><input type="checkbox" value="Sunroof"> <span></span> Sunroof</label>
+                                <label class="feature-checkbox"><input type="checkbox" value="Power Steering"> <span></span> Power Steering</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Photos -->
+                <div class="wizard-panel" id="step-2">
+                    <div class="wizard-panel-header">
+                        <h2>Upload Photos</h2>
+                        <p>Add at least 4 clear photos of your vehicle. Good photos increase bookings by 40%.</p>
+                    </div>
+                    <div class="wizard-form">
+                        <div class="photo-upload-grid">
+                            <div class="photo-upload-card main-photo" id="photo-1">
+                                <div class="photo-placeholder">
+                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--text-tertiary)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                                    <span>Front view (main photo)</span>
+                                </div>
+                                <input type="file" accept="image/*" class="photo-input" data-slot="1">
+                            </div>
+                            <div class="photo-upload-card" id="photo-2">
+                                <div class="photo-placeholder">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--text-tertiary)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                                    <span>Side view</span>
+                                </div>
+                                <input type="file" accept="image/*" class="photo-input" data-slot="2">
+                            </div>
+                            <div class="photo-upload-card" id="photo-3">
+                                <div class="photo-placeholder">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--text-tertiary)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                                    <span>Rear view</span>
+                                </div>
+                                <input type="file" accept="image/*" class="photo-input" data-slot="3">
+                            </div>
+                            <div class="photo-upload-card" id="photo-4">
+                                <div class="photo-placeholder">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--text-tertiary)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                                    <span>Interior</span>
+                                </div>
+                                <input type="file" accept="image/*" class="photo-input" data-slot="4">
+                            </div>
+                        </div>
+                        <p class="upload-tip">💡 Tip: Use natural lighting, clean your vehicle, and capture all angles for better visibility.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3: Pricing -->
+                <div class="wizard-panel" id="step-3">
+                    <div class="wizard-panel-header">
+                        <h2>Set Your Pricing</h2>
+                        <p>Set competitive prices. You can change them anytime.</p>
+                    </div>
+                    <div class="wizard-form">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="v-price-hour">Price per Hour (₹) *</label>
+                                <input type="number" id="v-price-hour" class="input" placeholder="e.g., 99" min="29" required>
+                                <span class="input-hint">Minimum ₹29/hour</span>
+                            </div>
+                            <div class="input-group">
+                                <label for="v-price-day">Price per Day (₹) *</label>
+                                <input type="number" id="v-price-day" class="input" placeholder="e.g., 1200" min="199" required>
+                                <span class="input-hint">Minimum ₹199/day</span>
+                            </div>
+                        </div>
+
+                        <div class="pricing-preview">
+                            <h4>Earnings Preview</h4>
+                            <div class="earnings-grid">
+                                <div class="earning-card">
+                                    <div class="earning-label">Per booking (1 day)</div>
+                                    <div class="earning-value" id="earn-per-day">₹0</div>
+                                    <div class="earning-note">After 12% platform fee</div>
+                                </div>
+                                <div class="earning-card">
+                                    <div class="earning-label">Weekly (5 bookings)</div>
+                                    <div class="earning-value" id="earn-weekly">₹0</div>
+                                    <div class="earning-note">Estimated</div>
+                                </div>
+                                <div class="earning-card highlight">
+                                    <div class="earning-label">Monthly (20 bookings)</div>
+                                    <div class="earning-value" id="earn-monthly">₹0</div>
+                                    <div class="earning-note">Estimated</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Documents -->
+                <div class="wizard-panel" id="step-4">
+                    <div class="wizard-panel-header">
+                        <h2>Upload Documents</h2>
+                        <p>We need these documents to verify your vehicle. They'll be reviewed within 24 hours.</p>
+                    </div>
+                    <div class="wizard-form">
+                        <div class="doc-upload-list">
+                            <div class="doc-upload-item">
+                                <div class="doc-info">
+                                    <div class="doc-icon">📄</div>
+                                    <div>
+                                        <h4>Vehicle Registration Certificate (RC)</h4>
+                                        <p>Upload front and back of your RC book</p>
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline btn-sm doc-upload-btn" data-doc="rc">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                                    Upload
+                                </button>
+                            </div>
+                            <div class="doc-upload-item">
+                                <div class="doc-info">
+                                    <div class="doc-icon">🛡️</div>
+                                    <div>
+                                        <h4>Insurance Certificate</h4>
+                                        <p>Valid vehicle insurance document</p>
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline btn-sm doc-upload-btn" data-doc="insurance">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                                    Upload
+                                </button>
+                            </div>
+                            <div class="doc-upload-item">
+                                <div class="doc-info">
+                                    <div class="doc-icon">🪪</div>
+                                    <div>
+                                        <h4>PUC Certificate</h4>
+                                        <p>Pollution Under Control certificate</p>
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline btn-sm doc-upload-btn" data-doc="puc">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                                    Upload
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: Location -->
+                <div class="wizard-panel" id="step-5">
+                    <div class="wizard-panel-header">
+                        <h2>Pickup Location</h2>
+                        <p>Where will renters pick up the vehicle?</p>
+                    </div>
+                    <div class="wizard-form">
+                        <div class="input-group">
+                            <label for="v-city">City *</label>
+                            <select id="v-city" class="input" required>
+                                <option value="">Select city</option>
+                                <option value="Bhimavaram">Bhimavaram</option>
+                                <option value="Vijayawada">Vijayawada</option>
+                                <option value="Guntur">Guntur</option>
+                                <option value="Vizag">Vizag (Visakhapatnam)</option>
+                                <option value="Kakinada">Kakinada</option>
+                                <option value="Rajahmundry">Rajahmundry</option>
+                                <option value="Tirupati">Tirupati</option>
+                                <option value="Nellore">Nellore</option>
+                                <option value="Warangal">Warangal</option>
+                                <option value="Eluru">Eluru</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="v-address">Full Address *</label>
+                            <textarea id="v-address" class="input" rows="2" placeholder="Street address, landmark, area" required></textarea>
+                        </div>
+                        <div class="map-placeholder">
+                            <div class="map-mock">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                <p>Map integration will be enabled with Google Maps API</p>
+                                <span>Pickup location will appear here</span>
+                            </div>
+                        </div>
+
+                        <!-- Submit Summary -->
+                        <div class="submit-summary" id="submit-summary">
+                            <h3>📋 Listing Summary</h3>
+                            <div class="summary-details" id="listing-summary">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="wizard-nav">
+                    <button class="btn btn-ghost btn-lg" id="wizard-prev" style="display:none">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                        Previous
+                    </button>
+                    <div style="flex:1"></div>
+                    <button class="btn btn-primary btn-lg" id="wizard-next">
+                        Next Step
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile Bottom Nav -->
+    <nav class="bottom-nav" id="bottom-nav">
+        <a href="index.html" class="bottom-nav-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg><span>Home</span></a>
+        <a href="search.html" class="bottom-nav-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg><span>Search</span></a>
+        <a href="dashboard.html" class="bottom-nav-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span>Bookings</span></a>
+        <a href="auth.html" class="bottom-nav-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Profile</span></a>
+    </nav>
+
+    <script src="js/app.js"></script>
+    <script src="js/list-vehicle.js"></script>
+</body>
+</html>

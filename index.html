@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AutoShare - India's affordable vehicle renting platform for Tier 2 & Tier 3 cities. Rent cars, bikes, and SUVs instantly with UPI payments.">
+    <meta name="keywords" content="car rental, vehicle sharing, carpooling, rent car India, AutoShare">
+    <meta name="author" content="AutoShare">
+    <title>AutoShare — Rent Vehicles Instantly | Affordable Car Rentals in India</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- ===================== HEADER / NAVBAR ===================== -->
+    <header class="navbar" id="navbar">
+        <div class="container navbar-inner">
+            <a href="index.html" class="logo" id="logo">
+                <div class="logo-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <rect width="32" height="32" rx="8" fill="var(--primary)"/>
+                        <path d="M8 20C8 20 10 14 16 14C22 14 24 20 24 20" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="11" cy="21" r="2.5" fill="white"/>
+                        <circle cx="21" cy="21" r="2.5" fill="white"/>
+                        <path d="M13 14L14 10H18L19 14" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <span class="logo-text">Auto<span class="logo-accent">Share</span></span>
+            </a>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="search.html" class="nav-link">Search Vehicles</a>
+                <a href="list-vehicle.html" class="nav-link">List Your Vehicle</a>
+                <a href="how-it-works.html" class="nav-link">How It Works</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="btn-icon" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                    </svg>
+                    <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
+                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+                    </svg>
+                </button>
+                <button class="btn-icon notification-btn" id="notification-btn" aria-label="Notifications" style="display:none">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/>
+                    </svg>
+                    <span class="notification-badge">3</span>
+                </button>
+                <a href="auth.html" class="btn btn-primary btn-sm" id="auth-btn">Login</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===================== HERO SECTION ===================== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-pattern"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-badge fade-in">
+                <span class="badge badge-primary">🚗 India's Most Affordable Vehicle Rentals</span>
+            </div>
+            <h1 class="hero-title fade-in delay-1">
+                Rent a Vehicle,<br>
+                <span class="gradient-text">Anytime, Anywhere</span>
+            </h1>
+            <p class="hero-subtitle fade-in delay-2">
+                Find cars, bikes, and SUVs near you. Book instantly with UPI. 
+                Trusted by thousands across Tier 2 & 3 cities in India.
+            </p>
+
+            <!-- SEARCH BOX -->
+            <div class="hero-search fade-in delay-3" id="hero-search">
+                <div class="search-box">
+                    <div class="search-field">
+                        <label for="search-city">City</label>
+                        <div class="search-input-wrapper">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <input type="text" id="search-city" placeholder="Enter city name" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="search-divider"></div>
+                    <div class="search-field">
+                        <label for="search-pickup">Pickup Date</label>
+                        <div class="search-input-wrapper">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                            <input type="date" id="search-pickup">
+                        </div>
+                    </div>
+                    <div class="search-divider"></div>
+                    <div class="search-field">
+                        <label for="search-return">Return Date</label>
+                        <div class="search-input-wrapper">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                            <input type="date" id="search-return">
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-search" id="search-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                        <span>Search</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- TRUST INDICATORS -->
+            <div class="hero-stats fade-in delay-4">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="2500">0</span>
+                    <span class="stat-label">Vehicles Listed</span>
+                </div>
+                <div class="stat-dot"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="50">0</span>
+                    <span class="stat-label">Cities</span>
+                </div>
+                <div class="stat-dot"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="15000">0</span>
+                    <span class="stat-label">Happy Riders</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- ===================== HOW IT WORKS ===================== -->
+    <section class="section how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Simple & Fast</span>
+                <h2 class="section-title">How AutoShare Works</h2>
+                <p class="section-subtitle">Get on the road in 3 easy steps</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card slide-up">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                    </div>
+                    <h3>Search Vehicles</h3>
+                    <p>Enter your city, dates, and preferences. Browse hundreds of verified vehicles near you.</p>
+                </div>
+                <div class="step-connector">
+                    <svg width="40" height="24" viewBox="0 0 40 24"><path d="M0 12h36M30 6l6 6-6 6" stroke="var(--primary)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+                </div>
+                <div class="step-card slide-up delay-1">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M9 16l2 2 4-4"/></svg>
+                    </div>
+                    <h3>Book Instantly</h3>
+                    <p>Select your vehicle, choose dates, and confirm your booking in seconds. No paperwork needed.</p>
+                </div>
+                <div class="step-connector">
+                    <svg width="40" height="24" viewBox="0 0 40 24"><path d="M0 12h36M30 6l6 6-6 6" stroke="var(--primary)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+                </div>
+                <div class="step-card slide-up delay-2">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.5"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <h3>Pick Up & Drive</h3>
+                    <p>Head to the pickup location, collect your vehicle, and hit the road. Pay easily via UPI or card.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FEATURED VEHICLES ===================== -->
+    <section class="section featured-vehicles" id="featured-vehicles">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Top Picks</span>
+                <h2 class="section-title">Featured Vehicles</h2>
+                <p class="section-subtitle">Popular rides in your city, ready to book</p>
+            </div>
+
+            <div class="vehicle-categories" id="vehicle-categories">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="car">Cars</button>
+                <button class="category-btn" data-category="suv">SUVs</button>
+                <button class="category-btn" data-category="bike">Bikes</button>
+                <button class="category-btn" data-category="carpool">Carpools</button>
+            </div>
+
+            <div class="vehicles-grid" id="vehicles-grid">
+                <!-- Vehicle cards injected by JS -->
+            </div>
+
+            <div class="section-cta">
+                <a href="search.html" class="btn btn-outline btn-lg">
+                    View All Vehicles
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== WHY AUTOSHARE ===================== -->
+    <section class="section why-us" id="why-us">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Why Choose Us</span>
+                <h2 class="section-title">Built for India's Growing Cities</h2>
+                <p class="section-subtitle">Affordable, trusted, and designed for Tier 2 & 3 cities</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card slide-up">
+                    <div class="feature-icon" style="--accent: #2563EB">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                    </div>
+                    <h3>Verified & Insured</h3>
+                    <p>Every vehicle is verified. Every trip comes with basic insurance coverage for peace of mind.</p>
+                </div>
+                <div class="feature-card slide-up delay-1">
+                    <div class="feature-icon" style="--accent: #16A34A">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                    </div>
+                    <h3>Affordable Pricing</h3>
+                    <p>Competitive rates starting at ₹99/hour. No hidden charges. Pay only for what you use.</p>
+                </div>
+                <div class="feature-card slide-up delay-2">
+                    <div class="feature-icon" style="--accent: #9333EA">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+                    </div>
+                    <h3>UPI & Digital Payments</h3>
+                    <p>Pay seamlessly with UPI, PhonePe, Google Pay, or cards. Instant confirmation on payment.</p>
+                </div>
+                <div class="feature-card slide-up delay-3">
+                    <div class="feature-icon" style="--accent: #EA580C">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
+                    <h3>Trusted Community</h3>
+                    <p>2-way ratings, Aadhaar-verified profiles, and 24/7 support. A community you can trust.</p>
+                </div>
+                <div class="feature-card slide-up delay-4">
+                    <div class="feature-icon" style="--accent: #0891B2">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <h3>Instant Booking</h3>
+                    <p>No waiting for approvals. Book instantly and get confirmation within seconds.</p>
+                </div>
+                <div class="feature-card slide-up delay-5">
+                    <div class="feature-icon" style="--accent: #DC2626">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <h3>50+ Cities</h3>
+                    <p>Available across growing Indian cities. Find vehicles wherever you travel — big or small towns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== BECOME AN OWNER CTA ===================== -->
+    <section class="section owner-cta" id="owner-cta">
+        <div class="container">
+            <div class="owner-cta-card">
+                <div class="owner-cta-content">
+                    <span class="section-tag" style="--tag-bg: rgba(255,255,255,0.15); --tag-color: #fff">For Vehicle Owners</span>
+                    <h2>Earn Money from Your Idle Vehicle</h2>
+                    <p>Your car is sitting idle most of the day. List it on AutoShare and start earning passive income. Set your own prices, availability, and rules.</p>
+                    <div class="owner-stats">
+                        <div class="owner-stat">
+                            <span class="owner-stat-value">₹15,000+</span>
+                            <span class="owner-stat-label">Avg. monthly earnings</span>
+                        </div>
+                        <div class="owner-stat">
+                            <span class="owner-stat-value">500+</span>
+                            <span class="owner-stat-label">Active owners</span>
+                        </div>
+                        <div class="owner-stat">
+                            <span class="owner-stat-value">100%</span>
+                            <span class="owner-stat-label">Insurance covered</span>
+                        </div>
+                    </div>
+                    <a href="list-vehicle.html" class="btn btn-white btn-lg">
+                        List Your Vehicle
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+                <div class="owner-cta-visual">
+                    <div class="floating-card fc-1">
+                        <div class="fc-icon">📊</div>
+                        <div>
+                            <div class="fc-title">This month</div>
+                            <div class="fc-value">₹12,450</div>
+                        </div>
+                    </div>
+                    <div class="floating-card fc-2">
+                        <div class="fc-icon">⭐</div>
+                        <div>
+                            <div class="fc-title">Rating</div>
+                            <div class="fc-value">4.8/5</div>
+                        </div>
+                    </div>
+                    <div class="floating-card fc-3">
+                        <div class="fc-icon">🚗</div>
+                        <div>
+                            <div class="fc-title">Trips</div>
+                            <div class="fc-value">28 completed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== TESTIMONIALS ===================== -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">What Users Say</span>
+                <h2 class="section-title">Trusted by Thousands</h2>
+                <p class="section-subtitle">Real stories from our community</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"I rented a Swift Dzire for a weekend trip to Araku Valley. The booking was so smooth — paid via UPI and picked up the car in 10 minutes. Amazing service!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RK</div>
+                        <div>
+                            <div class="author-name">Rajesh Kumar</div>
+                            <div class="author-city">Bhimavaram</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"I list my Honda City on AutoShare when I'm not using it. Earning ₹12,000 extra per month without any effort. The platform handles everything!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">PS</div>
+                        <div>
+                            <div class="author-name">Priya Sharma</div>
+                            <div class="author-city">Vijayawada</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"As a college student in Guntur, AutoShare is perfect. I rent bikes for ₹199/day instead of buying one. Affordable and reliable every time."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AV</div>
+                        <div>
+                            <div class="author-name">Anil Varma</div>
+                            <div class="author-city">Guntur</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CITIES ===================== -->
+    <section class="section cities" id="cities">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Growing Fast</span>
+                <h2 class="section-title">Available in 50+ Cities</h2>
+                <p class="section-subtitle">And expanding every week across India</p>
+            </div>
+            <div class="cities-grid">
+                <div class="city-card">
+                    <div class="city-emoji">🏛️</div>
+                    <h4>Bhimavaram</h4>
+                    <span>120+ vehicles</span>
+                </div>
+                <div class="city-card">
+                    <div class="city-emoji">🌉</div>
+                    <h4>Vijayawada</h4>
+                    <span>300+ vehicles</span>
+                </div>
+                <div class="city-card">
+                    <div class="city-emoji">🏭</div>
+                    <h4>Guntur</h4>
+                    <span>180+ vehicles</span>
+                </div>
+                <div class="city-card">
+                    <div class="city-emoji">⛱️</div>
+                    <h4>Vizag</h4>
+                    <span>250+ vehicles</span>
+                </div>
+                <div class="city-card">
+                    <div class="city-emoji">🏰</div>
+                    <h4>Warangal</h4>
+                    <span>90+ vehicles</span>
+                </div>
+                <div class="city-card">
+                    <div class="city-emoji">🌊</div>
+                    <h4>Kakinada</h4>
+                    <span>75+ vehicles</span>
+                </div>
+                <div class="city-card">
+                    <div class="city-emoji">🎓</div>
+                    <h4>Tirupati</h4>
+                    <span>200+ vehicles</span>
+                </div>
+                <div class="city-card">
+                    <div class="city-emoji">🕌</div>
+                    <h4>Nellore</h4>
+                    <span>85+ vehicles</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== APP DOWNLOAD CTA ===================== -->
+    <section class="section app-cta" id="app-cta">
+        <div class="container">
+            <div class="app-cta-inner">
+                <div class="app-cta-content">
+                    <h2>Start Renting Today</h2>
+                    <p>Join thousands of happy users across India. Sign up in 30 seconds and find your perfect ride.</p>
+                    <div class="app-cta-actions">
+                        <a href="auth.html" class="btn btn-primary btn-lg">
+                            Get Started Free
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="how-it-works.html" class="btn btn-ghost btn-lg">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+                                <rect width="32" height="32" rx="8" fill="var(--primary)"/>
+                                <path d="M8 20C8 20 10 14 16 14C22 14 24 20 24 20" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="11" cy="21" r="2.5" fill="white"/>
+                                <circle cx="21" cy="21" r="2.5" fill="white"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Auto<span class="logo-accent">Share</span></span>
+                    </a>
+                    <p class="footer-desc">India's most affordable vehicle renting platform for Tier 2 & Tier 3 cities.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Platform</h4>
+                    <a href="search.html">Search Vehicles</a>
+                    <a href="list-vehicle.html">List Your Vehicle</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="#">Pricing</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <a href="#">Help Center</a>
+                    <a href="#">Safety</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AutoShare. All rights reserved. Made with ❤️ in India.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Twitter">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===================== MOBILE BOTTOM NAV ===================== -->
+    <nav class="bottom-nav" id="bottom-nav">
+        <a href="index.html" class="bottom-nav-item active">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+            <span>Home</span>
+        </a>
+        <a href="search.html" class="bottom-nav-item">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            <span>Search</span>
+        </a>
+        <a href="dashboard.html" class="bottom-nav-item">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            <span>Bookings</span>
+        </a>
+        <a href="auth.html" class="bottom-nav-item">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Profile</span>
+        </a>
+    </nav>
+
+    <!-- ===================== THREE.JS LIBRARY ===================== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- ===================== CUSTOM SCRIPTS ===================== -->
+    <script src="js/animations.js"></script>
+    <script src="js/3d-visualization.js"></script>
+    <script src="js/interactive.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- Optional: Remove or keep existing scripts if they don't conflict -->
+    <!-- <script src="js/app.js"></script> -->
+    <!-- <script src="js/home.js"></script> -->
+</body>
+</html>

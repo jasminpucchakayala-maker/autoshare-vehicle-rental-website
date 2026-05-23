@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how AutoShare works. Rent vehicles, list your car, or join carpools in 3 simple steps.">
+    <title>How It Works — AutoShare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/how-it-works.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container navbar-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="var(--primary)"/><path d="M8 20C8 20 10 14 16 14C22 14 24 20 24 20" stroke="white" stroke-width="2" stroke-linecap="round"/><circle cx="11" cy="21" r="2.5" fill="white"/><circle cx="21" cy="21" r="2.5" fill="white"/></svg></div>
+                <span class="logo-text">Auto<span class="logo-accent">Share</span></span>
+            </a>
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="search.html" class="nav-link">Search Vehicles</a>
+                <a href="list-vehicle.html" class="nav-link">List Your Vehicle</a>
+                <a href="how-it-works.html" class="nav-link active">How It Works</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="btn-icon" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                </button>
+                <a href="auth.html" class="btn btn-primary btn-sm" id="auth-btn">Login</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="hiw-page page-transition">
+        <!-- Hero -->
+        <section class="hiw-hero">
+            <div class="container">
+                <span class="section-tag">Simple & Fast</span>
+                <h1>How AutoShare Works</h1>
+                <p>Whether you want to rent a vehicle or list your own, getting started takes just a few minutes.</p>
+            </div>
+        </section>
+
+        <!-- For Renters -->
+        <section class="section hiw-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">For Renters</span>
+                    <h2 class="section-title">Rent a Vehicle in 3 Steps</h2>
+                    <p class="section-subtitle">From search to driving — it's that simple</p>
+                </div>
+
+                <div class="hiw-timeline">
+                    <div class="hiw-step slide-up">
+                        <div class="hiw-step-num">1</div>
+                        <div class="hiw-step-content">
+                            <div class="hiw-step-icon">🔍</div>
+                            <h3>Search & Browse</h3>
+                            <p>Enter your city and travel dates. Browse available cars, SUVs, bikes, and shared carpools. Filter by price, type, fuel, and ride style.</p>
+                            <div class="hiw-step-tags">
+                                <span>Enter city</span>
+                                <span>Pick dates</span>
+                                <span>Choose carpool</span>
+                                <span>Compare options</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hiw-step slide-up delay-1">
+                        <div class="hiw-step-num">2</div>
+                        <div class="hiw-step-content">
+                            <div class="hiw-step-icon">📋</div>
+                            <h3>Book & Pay</h3>
+                            <p>Select your vehicle, review the pricing, and book instantly. Pay securely via UPI, PhonePe, Google Pay, or cards.</p>
+                            <div class="hiw-step-tags">
+                                <span>Instant booking</span>
+                                <span>UPI payments</span>
+                                <span>Price breakdown</span>
+                                <span>Free cancellation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hiw-step slide-up delay-2">
+                        <div class="hiw-step-num">3</div>
+                        <div class="hiw-step-content">
+                            <div class="hiw-step-icon">🚗</div>
+                            <h3>Pick Up & Drive</h3>
+                            <p>Head to the pickup location, verify the vehicle condition, and hit the road. Return the vehicle when you're done. That's it!</p>
+                            <div class="hiw-step-tags">
+                                <span>GPS directions</span>
+                                <span>Condition check</span>
+                                <span>Drive freely</span>
+                                <span>Easy return</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-cta" style="margin-top: var(--space-10);">
+                    <a href="search.html" class="btn btn-primary btn-lg">
+                        Start Searching
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- For Owners -->
+        <section class="section hiw-section hiw-owners">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">For Vehicle Owners</span>
+                    <h2 class="section-title">List & Earn in 5 Steps</h2>
+                    <p class="section-subtitle">Turn your idle vehicle into passive income</p>
+                </div>
+
+                <div class="hiw-cards-grid">
+                    <div class="hiw-card slide-up">
+                        <div class="hiw-card-num">1</div>
+                        <div class="hiw-card-icon">📝</div>
+                        <h4>Create Account</h4>
+                        <p>Sign up with your phone number and complete KYC verification (Aadhaar + Driving License).</p>
+                    </div>
+                    <div class="hiw-card slide-up delay-1">
+                        <div class="hiw-card-num">2</div>
+                        <div class="hiw-card-icon">📸</div>
+                        <h4>Add Vehicle Details</h4>
+                        <p>Enter vehicle info, upload clear photos, set your pricing, and upload documents.</p>
+                    </div>
+                    <div class="hiw-card slide-up delay-2">
+                        <div class="hiw-card-num">3</div>
+                        <div class="hiw-card-icon">✅</div>
+                        <h4>Get Verified</h4>
+                        <p>Our team verifies your documents within 24 hours. Once approved, your vehicle goes live.</p>
+                    </div>
+                    <div class="hiw-card slide-up delay-3">
+                        <div class="hiw-card-num">4</div>
+                        <div class="hiw-card-icon">📲</div>
+                        <h4>Receive Bookings</h4>
+                        <p>Get notified when someone books your vehicle. manage availability from your dashboard.</p>
+                    </div>
+                    <div class="hiw-card slide-up delay-4">
+                        <div class="hiw-card-num">5</div>
+                        <div class="hiw-card-icon">💰</div>
+                        <h4>Earn Money</h4>
+                        <p>Get paid directly to your bank account. Track earnings, payouts, and performance from your dashboard.</p>
+                    </div>
+                </div>
+
+                <div class="section-cta" style="margin-top: var(--space-10);">
+                    <a href="list-vehicle.html" class="btn btn-primary btn-lg">
+                        List Your Vehicle
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section hiw-faq">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">FAQ</span>
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                </div>
+
+                <div class="faq-list" id="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            <span>What documents do I need to rent a vehicle?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>You need a valid Aadhaar card and Driving License. Upload these during signup and our team will verify them within 24 hours.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            <span>How do payments work?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We accept UPI (PhonePe, Google Pay), debit/credit cards, and net banking via Razorpay. A refundable security deposit is collected at booking and returned after the vehicle is returned in good condition.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            <span>What if there's damage to the vehicle?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>All rentals include basic insurance coverage. A pre-trip and post-trip condition checklist is mandatory. Any damage beyond normal wear is deducted from the security deposit. Our support team mediates any disputes.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            <span>Can I cancel a booking?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! Free cancellation is available up to 24 hours before the pickup time. Cancellations within 24 hours may incur a small fee.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            <span>How much can I earn as a vehicle owner?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Earnings depend on your vehicle type, pricing, and demand. On average, owners earn ₹10,000 - ₹20,000 per month. You set your own prices and AutoShare takes a 12% platform fee.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            <span>Which cities is AutoShare available in?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We're currently available in 50+ Tier 2 and Tier 3 cities across India, including Bhimavaram, Vijayawada, Guntur, Vizag, Kakinada, Tirupati, and more. We're expanding every week!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section">
+            <div class="container">
+                <div class="hiw-final-cta">
+                    <h2>Ready to Get Started?</h2>
+                    <p>Join thousands of happy users across India</p>
+                    <div class="hiw-cta-buttons">
+                        <a href="search.html" class="btn btn-primary btn-lg">Rent a Vehicle</a>
+                        <a href="list-vehicle.html" class="btn btn-outline btn-lg">List Your Vehicle</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border:none;padding:0;">
+                <p>&copy; 2026 AutoShare. All rights reserved. Made with ❤️ in India.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Nav -->
+    <nav class="bottom-nav" id="bottom-nav">
+        <a href="index.html" class="bottom-nav-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg><span>Home</span></a>
+        <a href="search.html" class="bottom-nav-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg><span>Search</span></a>
+        <a href="dashboard.html" class="bottom-nav-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span>Bookings</span></a>
+        <a href="auth.html" class="bottom-nav-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Profile</span></a>
+    </nav>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sign in or create your AutoShare account. Start renting vehicles or list your own car to earn money.">
+    <title>Login & Sign Up — AutoShare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container navbar-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <rect width="32" height="32" rx="8" fill="var(--primary)"/>
+                        <path d="M8 20C8 20 10 14 16 14C22 14 24 20 24 20" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="11" cy="21" r="2.5" fill="white"/>
+                        <circle cx="21" cy="21" r="2.5" fill="white"/>
+                    </svg>
+                </div>
+                <span class="logo-text">Auto<span class="logo-accent">Share</span></span>
+            </a>
+            <div class="nav-actions">
+                <button class="btn-icon" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="auth-page">
+        <div class="auth-container">
+            <!-- Left: Branding -->
+            <div class="auth-brand">
+                <div class="auth-brand-content">
+                    <h1>Welcome to<br><span class="gradient-text">AutoShare</span></h1>
+                    <p>India's most affordable vehicle renting platform. Join thousands of users across 50+ cities.</p>
+                    <div class="auth-brand-features">
+                        <div class="brand-feature">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                            <span>Verified vehicles & owners</span>
+                        </div>
+                        <div class="brand-feature">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                            <span>Instant UPI payments</span>
+                        </div>
+                        <div class="brand-feature">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                            <span>Starting at just ₹99/hour</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Auth Form -->
+            <div class="auth-form-wrapper">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="login" id="login-tab">Log In</button>
+                    <button class="auth-tab" data-tab="signup" id="signup-tab">Sign Up</button>
+                </div>
+
+                <!-- Login Form -->
+                <form class="auth-form" id="login-form">
+                    <div class="input-group">
+                        <label for="login-phone">Phone Number</label>
+                        <div class="input-with-prefix">
+                            <span class="input-prefix">+91</span>
+                            <input type="tel" id="login-phone" class="input" placeholder="Enter your phone number" maxlength="10" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="login-password">Password</label>
+                        <div class="input-with-suffix">
+                            <input type="password" id="login-password" class="input" placeholder="Enter your password" required>
+                            <button type="button" class="input-suffix toggle-password" aria-label="Toggle password">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="auth-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="remember-me">
+                            <span class="checkbox-custom"></span>
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg btn-full" id="login-btn">
+                        Log In
+                    </button>
+
+                    <div class="divider">
+                        <span>or continue with</span>
+                    </div>
+
+                    <button type="button" class="btn btn-social" id="google-login">
+                        <svg width="20" height="20" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        Continue with Google
+                    </button>
+                </form>
+
+                <!-- Signup Form -->
+                <form class="auth-form" id="signup-form" style="display: none;">
+                    <div class="input-group">
+                        <label for="signup-name">Full Name</label>
+                        <input type="text" id="signup-name" class="input" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="signup-email">Email Address</label>
+                        <input type="email" id="signup-email" class="input" placeholder="your@email.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="signup-phone">Phone Number</label>
+                        <div class="input-with-prefix">
+                            <span class="input-prefix">+91</span>
+                            <input type="tel" id="signup-phone" class="input" placeholder="Enter your phone number" maxlength="10" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="signup-password">Password</label>
+                        <div class="input-with-suffix">
+                            <input type="password" id="signup-password" class="input" placeholder="Create a password (min 8 characters)" minlength="8" required>
+                            <button type="button" class="input-suffix toggle-password" aria-label="Toggle password">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="signup-role">I want to</label>
+                        <select id="signup-role" class="input" required>
+                            <option value="customer">Rent vehicles</option>
+                            <option value="owner">List my vehicles for rent</option>
+                            <option value="both">Both rent and list vehicles</option>
+                        </select>
+                    </div>
+
+                    <label class="checkbox-label" style="margin-bottom: var(--space-4);">
+                        <input type="checkbox" id="agree-terms" required>
+                        <span class="checkbox-custom"></span>
+                        I agree to the <a href="#" style="color:var(--primary)">Terms of Service</a> and <a href="#" style="color:var(--primary)">Privacy Policy</a>
+                    </label>
+
+                    <button type="submit" class="btn btn-primary btn-lg btn-full" id="signup-btn">
+                        Create Account
+                    </button>
+
+                    <div class="divider">
+                        <span>or continue with</span>
+                    </div>
+
+                    <button type="button" class="btn btn-social" id="google-signup">
+                        <svg width="20" height="20" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        Continue with Google
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
