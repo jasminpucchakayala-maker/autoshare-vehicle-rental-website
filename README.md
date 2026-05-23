@@ -17,6 +17,6 @@ AutoShare is a responsive vehicle rental website designed for Tier 2 & Tier 3 ci
 - GitHub Pages
 
 ## Live Demo
- file:///C:/Users/jasmi/OneDrive/Desktop/automobile-sharing/index.html
+ [file:///C:/Users/jasmi/OneDrive/Desktop/automobile-sharing/index.html] (https://jasminpucchakayala-maker.github.io/autoshare-vehicle-rental-website/)
 # autoshare-vehicle-rental-website
 Responsive vehicle rental website built using HTML, CSS, and JavaScript
