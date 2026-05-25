@@ -24,8 +24,8 @@ AutoShare is a responsive vehicle rental website designed for Tier 2 & Tier 3 ci
 ### Home Page
 ![Home](home.png)
 
-### Booking Section
-![Booking](images/booking.png)
+### How AutoShare Works
+![How AutoShare Works](How AutoShare Works1.png) (How AutoShare Works2.png)
 
 ### Mobile View
 ![Mobile](images/mobile.png)
